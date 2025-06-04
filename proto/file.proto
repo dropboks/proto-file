@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fpb;
+
+option go_package="github.com/dropboks/proto-file/pkg/fpb";
+
+service FileService{
+  rpc SaveProfileImage (Image) returns (ImageName){}
+}
+
+message Image{
+  bytes image = 1;
+}
+
+message ImageName{
+  string name = 1;
+}
