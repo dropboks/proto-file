@@ -5,6 +5,7 @@ option go_package="github.com/dropboks/proto-file/pkg/fpb";
 
 service FileService{
   rpc SaveProfileImage (Image) returns (ImageName){}
+  rpc RemoveProfileImage (ImageName) returns (Status){}
 }
 
 message Image{
@@ -13,4 +14,7 @@ message Image{
 
 message ImageName{
   string name = 1;
+}
+message Status{
+  bool status = 1;
 }
