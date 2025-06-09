@@ -24,6 +24,7 @@ const (
 type Image struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Image         []byte                 `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
+	Ext           string                 `protobuf:"bytes,2,opt,name=ext,proto3" json:"ext,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -63,6 +64,13 @@ func (x *Image) GetImage() []byte {
 		return x.Image
 	}
 	return nil
+}
+
+func (x *Image) GetExt() string {
+	if x != nil {
+		return x.Ext
+	}
+	return ""
 }
 
 type ImageName struct {
@@ -158,9 +166,10 @@ var File_file_proto protoreflect.FileDescriptor
 const file_file_proto_rawDesc = "" +
 	"\n" +
 	"\n" +
-	"file.proto\x12\x03fpb\"\x1d\n" +
+	"file.proto\x12\x03fpb\"/\n" +
 	"\x05Image\x12\x14\n" +
-	"\x05image\x18\x01 \x01(\fR\x05image\"\x1f\n" +
+	"\x05image\x18\x01 \x01(\fR\x05image\x12\x10\n" +
+	"\x03ext\x18\x02 \x01(\tR\x03ext\"\x1f\n" +
 	"\tImageName\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\" \n" +
 	"\x06Status\x12\x16\n" +
